@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using grupo_rojo.Data;
 using Microsoft.EntityFrameworkCore;
 using grupo_rojo.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace grupo_rojo.Controllers
 {
@@ -15,11 +16,14 @@ namespace grupo_rojo.Controllers
     {
         private readonly ILogger<CatalogoController> _logger;
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public CatalogoController(ILogger<CatalogoController> logger, ApplicationDbContext context)
+        public CatalogoController(ILogger<CatalogoController> logger, ApplicationDbContext context,UserManager<IdentityUser> userManager) 
+
         {
             _logger = logger;
             _context = context;
+            _userManager = userManager; 
         }
 
         public IActionResult Index(string? searchString)
@@ -50,6 +54,18 @@ namespace grupo_rojo.Controllers
             return View(objProduct);
         }
 
+        public async Task<IActionResult> Add(int? id){
+        var userID = _userManager.GetUserName(User);
+            if(userID == null){
+                ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
+                List<Producto> productos = new List<Producto>();
+                return  View("Index",productos);
+            }else{
+                var producto = await _context.DataProducto.FindAsync(id);
+            return RedirectToAction(nameof(Index));
+            }
+        }
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -62,6 +62,16 @@ namespace grupo_rojo.Controllers
                 return  View("Index",productos);
             }else{
                 var producto = await _context.DataProducto.FindAsync(id);
+                Util.SessionExtensions.Set<Producto>(HttpContext.Session,"MiUltimoProducto", producto);
+                
+                Proforma proforma = new Proforma();
+                proforma.Producto = producto;
+                proforma.Precio = producto.Precio;
+                proforma.Cantidad = 1;
+                proforma.UserID = userID;
+                _context.Add(proforma);
+                await _context.SaveChangesAsync();
+                ViewData["Message"] = "Se Agrego al carrito";
             return RedirectToAction(nameof(Index));
             }
         }

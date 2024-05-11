@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 html {
   font-size: 14px;
 }
@@ -17,6 +20,33 @@ html {
   min-height: 100%;
 }
 
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+.golden-text {
+  color: rgb(148, 132, 43);
+}
+
 body {
   margin-bottom: 60px;
 }
+.color-azul {
+ background-color: rgb(36, 36, 58);
+}
+
+.text-center {
+  
+  text-align: center;
+}
+
+.carrito-icono {
+  width: 50px; /* Ajusta el tamaño según sea necesario */
+  height: 50px;
+  margin-left: 10px; /* Agrega margen izquierdo para separar el icono del texto "Carrito" */
+  vertical-align: middle; /* Alinea verticalmente el icono con el texto */
+}
+

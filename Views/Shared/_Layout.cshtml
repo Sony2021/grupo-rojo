@@ -3,43 +3,66 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - grupo_rojo</title>
+    <title>@ViewData["Title"] -flotex</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/grupo_rojo.styles.css" asp-append-version="true" />
+    
+    
 </head>
 <body>
-    <header>
+    <header >
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">grupo_rojo</a>
+            <div class="container-fluid color-azul">
+                <a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">
+                 <div class="logo-container">
+                    <img src="/imagenes/logo.png" alt="FLOTEX Logo">
+                    <span class="fs-1 golden-text">FLOTEX</span>  
+                    <p class="pacifico-regular golden-text">Calidad y tendencia textil</p> 
+                 </div>   
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-nav-container ">  <ul class="navbar-nav flex-grow-1 text-center ">
+                    <ul class="navbar-nav flex-grow-1 golden-text">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class=" nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                                <p class="golden-text">Home</p>
+                                </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark golden-header" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <p class="golden-text">Privacy</p>
+                                </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">Contacto</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">
+                                <p class="golden-text">Contacto</p>
+                                </a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">Catalogo</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">
+                                <p class="golden-text">Catalogo</p>
+                                </a>
                         </li>
+                        
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Carrito" asp-action="Index">
+                                
+                                <img src="/imagenes/carrito.png" alt="Icono del carrito de compras" class="carrito-icono">
+                                </a>
+                        </li>
+                    </ul>
+                    <li class="nav-item" >
                             <form asp-controller="Catalogo" asp-action="Index">
                                 <input type="text" name="searchString"><input type="submit" value="Buscar" />
                             </form>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Carrito" asp-action="Index">Carrito</a>
-                        </li>
-                    </ul>
+                    </li> 
+                        
+                </div>   
+                      
                     <partial name="_LoginPartial" />
                 </div>
             </div>

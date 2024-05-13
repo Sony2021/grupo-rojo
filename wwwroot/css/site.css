@@ -1,11 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+
+:root {
+  --golden-color: rgb(148, 132, 43);
+}
+
 html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   html {
     font-size: 16px;
   }
@@ -15,6 +20,10 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+body {
+  margin-bottom: 0px;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -22,18 +31,16 @@ html {
 
 .pacifico-regular {
   font-family: "Pacifico", cursive;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
 }
 
 
 .golden-text {
-  color: rgb(148, 132, 43);
+  color: var(--golden-color);
 }
 
-body {
-  margin-bottom: 60px;
-}
+
 .color-azul {
  background-color: rgb(36, 36, 58);
 }
@@ -44,9 +51,78 @@ body {
 }
 
 .carrito-icono {
-  width: 50px; /* Ajusta el tamaño según sea necesario */
-  height: 50px;
+  width: 80px; /* Ajusta el tamaño según sea necesario */
+  height: 80px;
   margin-left: 10px; /* Agrega margen izquierdo para separar el icono del texto "Carrito" */
   vertical-align: middle; /* Alinea verticalmente el icono con el texto */
 }
 
+.nav-item .nav-link.text-dark {
+  color: rgb(148, 132, 43); /* Mantén el color dorado para el texto */
+  padding: 8px 12px; /* Ajusta el espaciado interno */
+  border-radius: 4px; /* Agrega bordes redondeados */
+  transition: background-color 0.3s; /* Agrega transición al color de fondo */
+}
+
+.nav-item .nav-link.text-dark:hover {
+  background-color: rgba(148, 132, 43, 0.2); /* Cambia el color de fondo al pasar el ratón */
+}
+
+header .logo {
+  margin: 0;
+  padding: 25px 30px;
+}
+.container{
+  max-width: 1400px;
+  margin: auto;
+}
+
+header .container{
+  margin: 0;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header nav{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+footer {
+  margin: 0;
+  color: black;
+  padding: 12px;
+  background-color:rgb(36, 36, 58);
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+
+.letras-grandes{
+  font-size: 50px;
+}
+
+.letras-logeo{
+  font-size: 40px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Coloca los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Ajustes para los formularios */
+.navbar-form {
+  display: flex;
+}
+
+.navbar-search {
+  margin-right: 10px; /* Ajusta el margen derecho para separar los formularios */
+}

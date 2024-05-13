@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid color-azul">
                 <a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">
-                 <div class="logo-container">
+                 <div class="logo">
                     <img src="/imagenes/logo.png" alt="FLOTEX Logo">
                     <span class="fs-1 golden-text">FLOTEX</span>  
                     <p class="pacifico-regular golden-text">Calidad y tendencia textil</p> 
@@ -25,47 +25,59 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-nav-container ">  <ul class="navbar-nav flex-grow-1 text-center ">
-                    <ul class="navbar-nav flex-grow-1 golden-text">
+                <div class="container" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse ">  
+                    <ul class="navbar-nav flex-grow-1 text-center ">
+                        <li class="nav-item">
+                            <a class=" nav-link text-dark"  href="#somos" >
+                                <p class="golden-text letras-grandes"> Nosotros</p>
+                                </a>
+                        </li>
+
                         <li class="nav-item">
                             <a class=" nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                                <p class="golden-text">Home</p>
+                                <p class="golden-text letras-grandes">Home</p>
                                 </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark golden-header" asp-area="" asp-controller="Home" asp-action="Privacy">
-                                <p class="golden-text">Privacy</p>
+                            <a class="nav-link text-dark " asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <p class="golden-text letras-grandes">Privacy</p>
                                 </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Index">
-                                <p class="golden-text">Contacto</p>
+                                <p class="golden-text letras-grandes">Contacto</p>
                                 </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Catalogo" asp-action="Index">
-                                <p class="golden-text">Catalogo</p>
+                                <p class="golden-text letras-grandes">Catalogo</p>
                                 </a>
                         </li>
                         
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Carrito" asp-action="Index">
-                                
                                 <img src="/imagenes/carrito.png" alt="Icono del carrito de compras" class="carrito-icono">
                                 </a>
                         </li>
                     </ul>
-                    <li class="nav-item" >
-                            <form asp-controller="Catalogo" asp-action="Index">
-                                <input type="text" name="searchString"><input type="submit" value="Buscar" />
-                            </form>
-                    </li> 
-                        
-                </div>   
-                      
-                    <partial name="_LoginPartial" />
-                </div>
+
+                 </div>  
+                
+                 <div class="navbar-form navbar-search">
+                    
+                            <form class="d-flex" asp-controller="Catalogo" asp-action="Index">
+                                <input class="form-control me-2  search-input" name="searchString" type="search" placeholder="Buscar" aria-label="Buscar">
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>      
+                 </div>  
+                 <div class="col-md-auto ml-auto mb-3">
+                    <ul class="navbar-nav">
+                        <partial name="_LoginPartial" />
+                    </ul>
+                 
+                 </div>   
             </div>
+            
         </nav>
     </header>
     <div class="container">

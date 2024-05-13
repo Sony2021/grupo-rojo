@@ -2,26 +2,34 @@
 
 
 html {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 html {
   position: relative;
   min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+*{
+  box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   font-family: 'poppins', sans-serif;
-  margin-bottom: 60px;
-  background-image: url("/imagenes/fondo2.jpg");
-  background-position: center center;
-  background-repeat:  no-repeat;
+  margin-bottom: 0px;
+  background-image: url("/imagenes/fondo4.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position:  center;
+
+ 
 }
 
 
 .d-item{
-  height: 600px; /* Ajuste la altura según su preferencia */
+  height: 700px; /* Ajuste la altura según su preferencia */
   justify-content: flex-end; /* Alinear el contenido en la parte inferior */
   align-items: flex-end; /* Alinear el contenido en la parte inferior */
 }
@@ -38,7 +46,7 @@ body {
 
 h1.display-4.text-center {
   font-family: 'Montserrat', unset; /* Example font */
-  font-size: 2.9rem;
+  font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.2;
@@ -54,11 +62,43 @@ h1.display-4.text-center {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
+h1{ font-size: 3.5 em;}
+h2{ font-size: 2.7em;}
+
+@media (min-width: 720px) {
   h1.display-4.text-center {
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.8;
   }
+   
+  #somos .container{
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  #somos .texto {
+    width: 50%;
+    max-width: 600px;
+    text-align: initial;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  #somos h2{
+    margin-top: 0px;
+  }
+
+  #somos .img-container{
+      background-image: url("/imagenes/nosotros.jpg");
+      background-size: cover;
+      background-position: center center;
+      height: 500px;
+      width: 400px;
+  }
+ 
 }
 
 head {
@@ -70,4 +110,40 @@ title {
   color: #fff; /* White text color for page title */
 }
 
+#somos .container{
+  text-align: center;
+  padding: 200px 12px;
+}
 
+#hero {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 800px;
+  background-image: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+  )
+  ,url("/imagenes/hero3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  object-fit: cover;
+  max-height: 200%;
+}
+
+#hero h1{
+  color: white;
+}
+
+.color-acento {
+  color: rgb(148, 132, 43);
+}
+
+.carousel {
+  margin-bottom: 20px;
+}

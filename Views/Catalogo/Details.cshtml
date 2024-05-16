@@ -25,7 +25,7 @@
                     <p>Cantidad Total: @Model.CantidadTotal</p>
                     <p>Colores: @Model.Color</p>
                     <p>Precio: @Model.Precio</p>
-                    <a class="btn btn-primary" asp-action="Add" asp-route-id="@Model.Id">Agregar al Carrito</a>
+                    <a class="btn btn-primary" asp-controller="Carrito" asp-action="Add" asp-route-id="@Model.Id">Agregar al Carrito</a>
                 </div>
             </div>
         </div>

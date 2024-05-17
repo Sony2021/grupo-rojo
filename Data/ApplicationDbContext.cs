@@ -12,4 +12,7 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<grupo_rojo.Models.Contacto> DataContacto {get; set;}
     public DbSet<grupo_rojo.Models.Producto> DataProducto {get; set; }
     public DbSet<grupo_rojo.Models.Proforma> DataItemCarrito {get; set; } 
+    public DbSet<grupo_rojo.Models.Pago> DataPago {get; set; }
+    public DbSet<grupo_rojo.Models.Pedido> DataPedido {get; set; }
+    public DbSet<grupo_rojo.Models.DetallePedido> DataDetallePedido {get; set; }
 }

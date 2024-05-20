@@ -1,0 +1,91 @@
+body{
+    background-image: url(/imagenes/fondo4.jpg);
+}
+
+.row {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  #registerForm {
+    background-color: #fff;
+    width: 100%; 
+    max-width: 400px; 
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+  }
+  
+  h2 {
+    text-align: center;
+    color: #87782D;
+    margin-bottom: 1rem;
+  }
+  
+  hr {
+    margin: 1rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+  }
+  
+  .form-floating {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .form-control:focus {
+    border-color: #8bd2f4;
+    outline: none; 
+  }
+  
+  .form-floating label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    color: #999;
+  }
+  
+  .form-control:focus + .form-floating label,
+  .form-control.filled + .form-floating label {
+    opacity: 1;
+  }
+  
+  .text-danger {
+    color: #dc3545; 
+    font-size: 0.8rem; 
+    margin-top: 0.25rem; 
+  }
+  
+  #registerSubmit {
+    background-color: #ecb604; 
+    border-color: #ecb604;
+    border-radius: 60px;
+    color: #fff;
+  }
+  
+  @media (min-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 33.33%;
+    }
+  }

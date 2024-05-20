@@ -1,0 +1,84 @@
+body {
+    background-image: url(/imagenes/fondo4.jpg);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #87782D;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #000000;
+    margin-bottom: 20px;
+  }
+
+  .form-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-control {
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #ecb604;
+    color: #fff;
+    border: none;
+    border-radius: 60px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0067cc;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: #0067cc;
+  }
+  
+  @media (max-width: 768px) {
+    form {
+      width: 90%;
+    }
+  }

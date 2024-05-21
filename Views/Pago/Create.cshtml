@@ -2,10 +2,14 @@
 @{
     ViewData["Title"] = "Pago";
 }
-<h1>@ViewData["Title"]</h1>
+
+
+<head>
+<link rel="stylesheet" href="/css/pago.css" asp-append-version="true" />
+</head>
 
     <div class="container">
-
+      <h1>@ViewData["Title"]</h1>
         <div class="row">
           <div class="col-sm-10 mt-5">
            <form asp-controller="Pago" asp-action="Pagar">

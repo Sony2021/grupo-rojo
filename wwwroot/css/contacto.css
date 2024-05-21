@@ -1,0 +1,90 @@
+body {
+    background-image: url(/imagenes/fondo4.jpg);
+  }
+  
+  /* Center form horizontally (optional) */
+  .row {
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+  }
+  
+  .col-md-4 {
+    width: 100%; /* Remove Bootstrap column width */
+  }
+  
+  #registerForm{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 1200px; /* Adjust width if needed */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #87782D;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .btn-primary {
+    background-color: #ecb604;
+    color: #fff;
+    border: none;
+    border-radius: 60px;
+    padding: 20px 100px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0067cc;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: #0067cc;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+  /* Responsive adjustments (optional) */
+  @media (max-width: 768px) {
+    form {
+      width: 90%;
+    }
+  }
+  

@@ -51,6 +51,12 @@ body {
     display: block;
     margin-bottom: 5px;
   }
+
+  .form-floating label {
+    left: 1rem;
+    transition: opacity 0.3s ease-in-out;
+    color: #999;
+  }
   
   .btn-primary {
     background-color: #ecb604;

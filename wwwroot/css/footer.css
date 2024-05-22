@@ -1,0 +1,58 @@
+.footer {
+    color: white !important; /* Color del texto */
+    padding: 20px 0; /* Espaciado interno */
+    display: flex;
+    justify-content: center; /* Distribución equitativa */
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.footer .section {
+    flex: 1;
+    min-width: 200px; /* Ancho mínimo para evitar que los elementos se encimen en pantallas pequeñas */
+    margin: 10px; /* Margen alrededor de cada sección */
+    margin-left: 350px;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.footer img {
+    height: 80px;
+    margin: 5px;
+    vertical-align: middle; /* Alinea las imágenes verticalmente al centro */
+    background: none;
+    border: none;
+
+}
+
+.footer a {
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    margin: 5px 0;
+}
+
+.footer .contact-info {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    margin: 5px 0;
+}
+
+.footer .contact-info img {
+    margin-right: 10px;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .footer {
+        flex-direction: column; /* Apila las secciones verticalmente */
+        text-align: center; /* Centra el texto */
+    }
+
+    .footer .section {
+        min-width: 100%; /* Hace que las secciones ocupen todo el ancho disponible */
+    }
+}

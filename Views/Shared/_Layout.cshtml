@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/grupo_rojo.styles.css" asp-append-version="true" />
-    
+    <link rel="stylesheet" href="/css/footer.css" asp-append-version="true" />
     
 </head>
 <body>
@@ -75,11 +75,38 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer">
+    <div class="section">
+        <h4>Métodos de pago</h4>
+        <img src="/imagenes/MasterCard.png" alt="MasterCard">
+        <img src="/imagenes/logoVisa.png" alt="VISA">
+        <img src="/imagenes/logoYape.png" alt="Yape">
+        <img src="/imagenes/logoPlin.png" alt="Plin">
+    </div>
+    <div class="section">
+        <h4>Nuestra Compañía</h4>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#"><img src="/imagenes/logoFb.png" alt="Facebook"></a>
+        <a href="#"><img src="/imagenes/logoIg.jpg" alt="Instagram"></a>
+    </div>
+    <div class="section">
+        <h4>Atención al Cliente</h4>
+        <p>servicioalcliente@Flotex.com</p>
+        <div class="contact-info">
+            <img src="/imagenes/logoUbi.png" alt="Location">
+            <p>Crd.21</p>
+        </div>
+        <div class="contact-info">
+            <img src="/imagenes/logoWhatsapp.png" alt="WhatsApp">
+            <p>+51 932 632 448</p>
+        </div>
+    </div>
+    </footer>
+    <!--<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - grupo_rojo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

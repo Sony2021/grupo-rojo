@@ -10,81 +10,33 @@ using grupo_rojo.Data;
 using grupo_rojo.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
-
-namespace grupo_rojo.Controllers
+public class PagoController : Controller
 {
-    public class PagoController : Controller
+    private readonly PayPalService _payPalService;
+
+    public PagoController(PayPalService payPalService)
     {
-        private readonly ILogger<PagoController> _logger;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly ApplicationDbContext _context;
+        _payPalService = payPalService;
+    }
 
-        public PagoController(ILogger<PagoController> logger,
-            UserManager<IdentityUser> userManager,
-            ApplicationDbContext context)
-        {
-            _logger = logger;
-            _userManager = userManager;
-            _context = context;
-        }
+    public async Task<IActionResult> Create(decimal monto)
+    {
+        var returnUrl = Url.Action("Success", "Pago", null, Request.Scheme);
+        var cancelUrl = Url.Action("Cancel", "Pago", null, Request.Scheme);
+        var redirectUrl = await _payPalService.CreatePaymentAsync(monto, "USD", returnUrl, cancelUrl);
+        return Redirect(redirectUrl);
+    }
 
-        public IActionResult Create(Decimal monto)
-        {
-            Pago pago = new Pago();
-            pago.UserID = _userManager.GetUserName(User);
-            pago.MontoTotal = monto;
-            return View(pago);
-        }
-        
-        [HttpPost]
-        public IActionResult Pagar(Pago pago)
-        {
-            pago.PaymentDate = DateTime.UtcNow;
-            _context.Add(pago);
+    public IActionResult Success()
+    {
+        return View();
+    }
 
-            var itemsCarrito = from o in _context.DataItemCarrito select o;
-            itemsCarrito = itemsCarrito.
-                Include(p => p.Producto).
-                Where(s => s.UserID.Equals(pago.UserID) && s.Status.Equals("PENDIENTE"));
-
-            Pedido pedido = new Pedido();
-            pedido.UserID = pago.UserID;
-            pedido.Total = pago.MontoTotal; 
-            pedido.pago = pago;
-            pedido.Status = "PENDIENTE";
-            _context.Add(pedido);
-
-            List<DetallePedido> itemsPedido = new List<DetallePedido>();
-            foreach(var item in itemsCarrito.ToList()){
-                DetallePedido detallePedido = new DetallePedido();
-                detallePedido.pedido=pedido;
-                detallePedido.Precio = item.Precio;
-                detallePedido.Producto = item.Producto;
-                detallePedido.Cantidad = item.Cantidad;
-                itemsPedido.Add(detallePedido);
-            }
-
-
-            _context.AddRange(itemsPedido);
-
-            foreach (Proforma p in itemsCarrito.ToList())
-            {
-                p.Status="PROCESADO";
-            }
-
-            _context.UpdateRange(itemsCarrito);
-
-            _context.SaveChanges();
-
-            ViewData["Message"] = "El pago se ha registrado y su pedido nro "+ pedido.ID +" esta en camino";
-            return View("Create");
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
+    public IActionResult Cancel()
+    {
+        return View();
     }
 }

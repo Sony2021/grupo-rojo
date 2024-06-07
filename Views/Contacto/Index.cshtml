@@ -30,4 +30,15 @@
         </div>
     </div>
 }
+
+@if (ViewData["Sentimiento"] != null)
+{
+    <div id="predictionResult">
+        <h3>Resultado de la Predicción</h3>
+        <p><strong>Sentimiento Predicho:</strong> @ViewData["Sentimiento"]</p>
+        <p><strong>Score:</strong> @ViewData["Score"]</p>
+    </div>
+}
+
+
  <h1>@ViewData["Message"]</h1>

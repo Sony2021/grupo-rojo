@@ -4,8 +4,11 @@ using grupo_rojo.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.OpenApi.Models;
 using grupo_rojo.Service;
+using Microsoft.Extensions.ML;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddPredictionEnginePool<MLModel1.ModelInput,MLModel1.ModelOutput>()
+    .FromFile("MLModel1.mlnet");
 
 // Add services to the container.
 /*var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -32,6 +35,10 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
 {

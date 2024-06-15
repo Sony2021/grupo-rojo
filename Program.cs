@@ -5,6 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.OpenApi.Models;
 using grupo_rojo.Service;
 using Microsoft.Extensions.ML;
+using grupo_rojo.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddPredictionEnginePool<MLModel1.ModelInput,MLModel1.ModelOutput>()
@@ -24,6 +25,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<IPayPalService, payPalService>();
 builder.Services.AddControllersWithViews();
 
 //Registro mi logica customizada y reuzable

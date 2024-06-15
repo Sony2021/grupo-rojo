@@ -8,43 +8,71 @@
     Decimal montoTotal = @Model.montoTotal;
 }
 
-<h1>@ViewData["Title"]</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-<a class="btn btn-primary" asp-controller="Pago" asp-action="Create" asp-route-monto="@montoTotal">Pagar con PayPal</a>
-<p>Total S/. @montoTotal</p>
+        body {
+            display: flex;
+            flex-direction: column;
+            background-image: url(/imagenes/fondo4.jpg);
+            margin: 0;
+            font-family: 'poppins', sans-serif;
+            margin-bottom: 0px;
+            background-image: url("/imagenes/fondo4.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Producto.Articulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Cantidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Precio)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (Proforma item in Model.elementosCarrito) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Producto.Articulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <a class="btn btn-primary" asp-controller="Pago" asp-action="Create" asp-route-monto="@montoTotal">Pagar con PayPal</a>
+    <p>Total S/. @montoTotal</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Producto.Articulo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Precio)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (Proforma item in Model.elementosCarrito) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Articulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,34 +1,73 @@
 @model IEnumerable<grupo_rojo.Models.Producto>
 @{
-    ViewData["Title"] = "Catalogo";
+    ViewData["Title"] = "Catálogo";
 }
-
-<h1>@ViewData["Title"]</h1>
-  <div class="container">
-    <h1>@ViewData["Message"]</h1>
-    <div class="row">
-      <div class="col">
-        <div id="products" class="mb-3">
-          <div class="row">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url("/imagenes/fondo4.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container-flex {
+            flex: 1;
+        }
+        footer {
+            background-color: rgb(36, 36, 58);
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container container-flex">
+        <h1 class="mt-5">@ViewData["Title"]</h1>
+        <div class="row">
             @foreach (var item in Model) {
-            <div class="col-sm-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-img-actions">
-                      <img src="@item.ImageURL" class="d-block w-100 image-fit">
-                  </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="@item.ImageURL" class="card-img-top" alt="@item.Articulo">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Articulo)</h5>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
+                            <div class="d-flex justify-content-between">
+                                <a class="btn btn-primary" asp-controller="Carrito" asp-action="Add" asp-route-id="@item.Id">Agregar</a>
+                                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">@Html.DisplayFor(modelItem => item.Articulo)</h5>
-                  <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
-                  <a class="btn btn-primary" asp-controller="Carrito" asp-action="Add" asp-route-id="@item.Id">Add</a>
-                  <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">View</a>
-                </div>
-              </div>
-            </div>
             }
-         </div>
         </div>
-      </div>
     </div>
-  </div>
+
+   
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

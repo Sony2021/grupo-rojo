@@ -4,8 +4,11 @@
 <link rel="stylesheet" href="/css/contacto.css" asp-append-version="true" />
 </head>
 
+<body>
+    
 @using (Html.BeginForm("EnviarMensaje", "Contacto", FormMethod.Post))
 {
+
     <div id="formContact">
         <h2>Contacto</h2>
         <div class="form-group">
@@ -42,3 +45,5 @@
 
 
  <h1>@ViewData["Message"]</h1>
+</body>
+

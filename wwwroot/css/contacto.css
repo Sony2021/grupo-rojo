@@ -1,5 +1,12 @@
 body {
-    background-image: url(/imagenes/fondo4.jpg);
+   
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+    margin-bottom: 0px;
+    background-image: url("/imagenes/fondo4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  center;
   }
   
   /* Center form horizontally (optional) */
@@ -88,3 +95,4 @@ body {
     }
   }
   
+ 

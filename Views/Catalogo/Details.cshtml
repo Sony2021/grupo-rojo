@@ -4,30 +4,36 @@
     ViewData["Title"] = "Detalles del Producto";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="text-center">@ViewData["Title"]</h1>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
             <div class="card mb-3">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <div class="card-img-actions">
                         <img class="img-responsive" width="96" height="150" src="@Model.ImageURL" alt="Imagen del Producto" />
                     </div>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Nombre: @Model.Articulo</h5>
-                    <p>Lote: @Model.Lote</p>
-                    <p>Composición: @Model.Composición</p>
-                    <p>Ancho: @Model.Ancho</p>
-                    <p>Gramaje: @Model.Gramaje</p>
-                    <p>Diseños: @Model.Diseño</p>
-                    <p>Cantidad Total: @Model.CantidadTotal</p>
-                    <p>Colores: @Model.Color</p>
-                    <p>Precio: @Model.Precio</p>
-                    <a class="btn btn-primary" asp-controller="Carrito" asp-action="Add" asp-route-id="@Model.Id">Agregar al Carrito</a>
+                    <h5 class="card-title text-center">Nombre: @Model.Articulo</h5>
+                    <p class="card-text">Lote: @Model.Lote</p>
+                    <p class="card-text">Composición: @Model.Composición</p>
+                    <p class="card-text">Ancho: @Model.Ancho</p>
+                    <p class="card-text">Gramaje: @Model.Gramaje</p>
+                    <p class="card-text">Diseños: @Model.Diseño</p>
+                    <p class="card-text">Cantidad Total: @Model.CantidadTotal</p>
+                    <p class="card-text">Colores: @Model.Color</p>
+                    <p class="card-text">Precio: @Model.Precio</p>
+                    <a class="btn btn-primary d-block mx-auto" style="width: fit-content;" asp-controller="Carrito" asp-action="Add" asp-route-id="@Model.Id">Agregar al Carrito</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    .card-body.text-justify p {
+        text-align: justify;
+    }
+</style>

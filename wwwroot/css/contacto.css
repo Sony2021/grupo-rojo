@@ -1,7 +1,14 @@
-body {
-    background-image: url(/imagenes/fondo4.jpg);
-  }
-  
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+display: flex;
+flex-direction: column;
+background-image: url(/imagenes/fondo4.jpg);
+}
   /* Center form horizontally (optional) */
   .row {
     display: flex; /* Enable flexbox for centering */

@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-grupo_rojo-4e8b1517-bfad-4b14-9699-280aa887bcae</UserSecretsId>
     <RootNamespace>grupo_rojo</RootNamespace>
+    <EnvironmentName>Development</EnvironmentName>
   </PropertyGroup>
 
   <ItemGroup>

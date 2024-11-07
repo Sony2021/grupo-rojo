@@ -18,25 +18,26 @@ namespace grupo_rojo.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public CatalogoController(ILogger<CatalogoController> logger, ApplicationDbContext context,UserManager<IdentityUser> userManager) 
+        public CatalogoController(ILogger<CatalogoController> logger, ApplicationDbContext context, UserManager<IdentityUser> userManager)
 
         {
             _logger = logger;
             _context = context;
-            _userManager = userManager; 
+            _userManager = userManager;
         }
+
 
         public IActionResult Index(string? searchString)
         {
             // Obtener todos los productos de la base de datos
             var productos = _context.DataProducto.ToList();
-            
+
             // Verificar si la lista de productos está vacía
             if (productos == null || productos.Count == 0)
             {
                 return NotFound(); // Puedes manejar este caso según tus necesidades
             }
-             // Aplicar filtro de búsqueda si el parámetro searchString no está vacío
+            // Aplicar filtro de búsqueda si el parámetro searchString no está vacío
             if (!String.IsNullOrEmpty(searchString))
             {
                 productos = productos
@@ -46,14 +47,16 @@ namespace grupo_rojo.Controllers
             return View(productos); // Pasar la lista de productos a la vista
         }
 
-        public async Task<IActionResult> Details(int? id){
+        public async Task<IActionResult> Details(int? id)
+        {
             Producto objProduct = await _context.DataProducto.FindAsync(id);
-            if(objProduct == null){
+            if (objProduct == null)
+            {
                 return NotFound();
             }
             return View(objProduct);
         }
-        
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

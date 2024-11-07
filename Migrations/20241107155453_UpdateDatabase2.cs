@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace grupo_rojo.Data.Migrations
+namespace grupo_rojo.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateDatabase : Migration
+    public partial class UpdateDatabase2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

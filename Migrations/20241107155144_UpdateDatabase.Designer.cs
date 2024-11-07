@@ -9,10 +9,10 @@ using grupo_rojo.Data;
 
 #nullable disable
 
-namespace grupo_rojo.Data.Migrations
+namespace grupo_rojo.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241107144206_UpdateDatabase")]
+    [Migration("20241107155144_UpdateDatabase")]
     partial class UpdateDatabase
     {
         /// <inheritdoc />
